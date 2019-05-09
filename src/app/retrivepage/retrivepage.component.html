@@ -1,0 +1,66 @@
+<div id="submitDiv1" class="container" style="padding: 15px; padding-top: 2px">
+	<form id="takeID" name="studentForm">
+
+		<!-- form for student data -->
+		<form id="takeID" name="studentForm">
+
+			<div class="form-group has-feedback">
+				<input type="text" [(ngModel)]="sEmail1" name="sEmail" class="form-control" placeholder="Enter name of the student">
+				<i class="glyphicon glyphicon-tags form-control-feedback"></i>
+			</div>
+
+			<div style="cursor: pointer" class="text-center">
+					<ul (click)="retrive()" class="pagination pagination-lg">
+						<li class="pageBtn">
+							<a id="submit" >Get Data
+								<span class="glyphicon glyphicon-thumbs-up"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+			<div *ngIf="showDiv">
+					<div class="form-group has-feedback">
+					<input type="text" [(ngModel)]="sEmail" value="sEmail" name="sEmail" class="form-control" placeholder="Enter Email Address">
+					<i class="glyphicon glyphicon-tags form-control-feedback"></i>
+				  </div>
+				<div class="form-group has-feedback">
+					<input type="text" name="sName" [(ngModel)]="sName" value="sName" class="form-control" placeholder="Enter Your Name">
+					<i class="glyphicon glyphicon-tags form-control-feedback"></i>
+				</div>
+
+
+				<div class="form-group has-feedback">
+					<input type="text" [(ngModel)]="sPhoneNumber" name="sPhone" value="sPhoneNumber" class="form-control" placeholder="Enter Phone Number">
+					<i class="glyphicon glyphicon-tags form-control-feedback"></i>
+				</div>
+
+				<div class="form-group has-feedback">
+					<textarea class="form-control" [(ngModel)]="sAddress" value="sAddress" name="sAddress" placeholder="Enter Address"></textarea>
+					<i class="glyphicon glyphicon-tags form-control-feedback"></i>
+				</div>
+				<div class="form-group has-feedback">
+						<textarea class="form-control" [(ngModel)]="sDepartment"  name="sDepartment" name="sAddress" placeholder="Enter Address"></textarea>
+						<i class="glyphicon glyphicon-tags form-control-feedback"></i>
+				<!--	<select [(ngModel)]="sDepartment" name="sDepartment" value="sDepartment" class="form-control">
+						 <option value="sDepartment">{{sDepartment}}</option>
+						 <option value="cse">CSE</option>
+						<option value="ece">ECE</option>
+						<option value="eee">EEE</option>
+						<option value="mech">MECH</option>
+						<option value="other">OTHER</option> 
+					</select>  -->
+				</div>
+			</div>
+			<div id="result" *ngIf="searchBar" class="alert alert-danger">
+				<strong>Alert!</strong> Please fill all form fields.
+			</div>
+
+			<!-- Error/Success response fields -->
+			<div id="error" class="alert alert-danger" style="display:none">
+				<strong>Error!</strong>
+			</div>
+			<div id="success" class="alert alert-success" style="display:none">
+				<strong>Success!</strong>
+			</div>
+

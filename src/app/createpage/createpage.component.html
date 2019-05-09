@@ -1,0 +1,57 @@
+	<div class="container" style="padding: 15px; padding-top: 2px">
+
+		<!-- form for student data -->
+		<form id="takeID" name="studentForm" >
+
+			<div class="form-group has-feedback">
+				<input type="text"   [(ngModel)]="sEmail"  name="sEmail" class="form-control" placeholder="Enter Email Address" >
+				<i class="glyphicon glyphicon-tags form-control-feedback"></i>
+			</div>
+
+			<div class="form-group has-feedback">
+				<input type="text"  name="sName" [(ngModel)]="sName" class="form-control" placeholder="Enter Your Name" >
+				<i class="glyphicon glyphicon-tags form-control-feedback"></i>
+			</div>
+
+ 
+			<div class="form-group has-feedback">
+				<input type="text"  [(ngModel)]="sPhoneNumber" name="sPhone" class="form-control" placeholder="Enter Phone Number" >
+				<i class="glyphicon glyphicon-tags form-control-feedback"></i>
+			</div>
+
+			<div class="form-group has-feedback">
+				<textarea class="form-control" [(ngModel)]="sAddress"  name="sAddress" placeholder="Enter Address" ></textarea>
+				<i class="glyphicon glyphicon-tags form-control-feedback"></i>
+			</div>
+
+			<div class="form-group has-feedback">
+				<select  [(ngModel)]="sDepartment" name="sDepartment" class="form-control" >
+					<option value="Select Department">Select Department</option>
+					<option value="cse">CSE</option>
+					<option value="ece">ECE</option>
+					<option value="eee">EEE</option>
+					<option value="mech">MECH</option>
+					<option value="other">OTHER</option>
+				</select>
+			</div>
+
+			<div *ngIf="showError" class="alert alert-danger" >
+				<strong>Alert!</strong> Please fill all form fields.
+			</div>
+
+			<div *ngIf="apiError"  class="alert alert-danger" >
+				<strong>Error!</strong>
+			</div>
+
+			<div *ngIf="apiSuccess" class="alert alert-success" >
+				<strong>Success!</strong>
+			</div>
+
+			<div class="text-center">
+				<ul class="pagination pagination-lg">
+					<li class="pageBtn"><a  style="cursor: pointer" (click)="submit()">Submit &nbsp;<span class="glyphicon glyphicon-thumbs-up"></span></a></li>
+				</ul>
+			</div>
+
+		
+	

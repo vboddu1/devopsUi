@@ -1,26 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-const appRoutes: Routes = [
-  { path: '',
-    redirectTo: '/insertData',
-    pathMatch: 'full'
-  },
-  { path: 'insertData', component: CreatepageComponent },
-  { path: 'retrieveData',  component: RetrivepageComponent }
-];
-
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-
+import { CreatepageComponent } from './createpage/createpage.component';
+import { RetrivepageComponent } from './retrivepage/retrivepage.component';
+import { AppRoutingModule } from './app.route';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { RetriveService } from './retrive.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreatepageComponent,
+    RetrivepageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    CommonModule,
+    RouterModule,
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [RetriveService],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }
+
