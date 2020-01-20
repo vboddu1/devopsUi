@@ -9,8 +9,8 @@ import { BehaviorSubject } from 'rxjs';
 
 export class RetriveService {
   
-  insertUrl = "http://172.17.10.48:7000/api/insert";
-  retriveUrl = "http://172.17.10.48:7000/api/retrieveById";
+  insertUrl = "http://localhost:7000/api/insert";
+  retriveUrl = "http://localhost:7000/api/retrieveById";
 
   constructor(private http: HttpClient) { }
 
